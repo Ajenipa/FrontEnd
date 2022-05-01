@@ -32,11 +32,11 @@ body {
   place-content: space-between;
 }
 
-.navbar nav {
+nav {
   display: none;
 }
 
-.navbar .mobile-menu {
+.mobile-menu {
   cursor: pointer;
 }
 
@@ -96,32 +96,6 @@ section {
   margin-top: 3em;
 }
 
-/**section.features-section{
-    background-color: #444444;
-    color: #ffffff;
-}
-ul.features-list {
-    margin: 0;
-    padding-left: .1em;
-
-    li {
-        font-size: 1.1em;
-        margin-bottom: 1em;
-        margin-left: 2em;
-        position: relative;
-
-        &:before {
-            content: '';
-            left: -2em;
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background-image: url('../assets/images/bullet.svg');
-            background-size: contain;
-            margin-right: .5em;
-        }
-    }
-}**/
 section.features-section {
   background: #20272E;
   color: white;
@@ -130,6 +104,10 @@ section.features-section {
 ul.features-list {
   margin: 0;
   padding-left: .1em;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(29rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(29rem, 1fr));
 }
 
 ul.features-list li {
@@ -152,5 +130,164 @@ ul.features-list li:before {
 
 .features-section img {
   display: none;
+}
+
+.testimonials-section {
+  background: var(--primary-color);
+  color: #ffffff;
+}
+
+.testimonials-section li {
+  background-color: #066bd6;
+  text-align: center;
+  padding: 2em 1em;
+  width: 80%;
+  margin: 0 auto 5em auto;
+  border-radius: 5em;
+}
+
+.testimonials-section li img {
+  width: 5em;
+  height: 5em;
+  border: 5px solid #006bdb;
+  border-radius: 50%;
+  margin-top: -4.5em;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+label {
+  display: block;
+  font-size: 1.2em;
+  margin: 0 0 0.5em 0;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 0.8em;
+  margin-bottom: 1em;
+  border: 1px solid grey;
+  border-radius: 0.3em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+input[type="submit"] {
+  background-color: #006bdb;
+  color: white;
+  font-weight: bold;
+  font-size: 1.3em;
+  width: unset;
+  border: none;
+  border-radius: 5em;
+  margin-bottom: 5em;
+  display: inline-block;
+  cursor: pointer;
+}
+
+iframe {
+  width: 100%;
+  height: 300%;
+}
+
+nav.menu-btn {
+  display: block;
+}
+
+nav.menu-close {
+  display: none;
+}
+
+nav {
+  position: fixed;
+  z-index: 999;
+  width: 66%;
+  right: 0;
+  top: 0;
+  background: #20272E;
+  height: 100vh;
+  padding: 1em;
+}
+
+nav ul.primary-nav {
+  margin-top: 5em;
+}
+
+nav li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: .5em;
+  font-size: 1.3em;
+  text-align: right;
+}
+
+nav li a:hover {
+  font-style: italic;
+  color: #007af3;
+}
+
+img.mobile-menu-exit {
+  float: right;
+  margin: 0.5em;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 768px) {
+  .mobile-menu, .mobile-menu-exit {
+    display: none;
+  }
+  .navbar .container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 180px auto;
+        grid-template-columns: 180px auto;
+    -webkit-box-pack: unset;
+        -ms-flex-pack: unset;
+            justify-content: unset;
+  }
+  .navbar nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    background: none;
+    position: unset;
+    height: auto;
+    width: 100%;
+    padding: 0%;
+  }
+  .navbar nav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .navbar nav a {
+    color: black;
+    font-size: 1em;
+    padding: 1em 1em;
+  }
+  .navbar nav ul.primary-nav {
+    margin: 0%;
+  }
+  .navbar nav li.current a {
+    font-weight: bold;
+  }
+  .navbar nav li.go-premium-cta a {
+    color: var(--primary-color);
+    background: black;
+    border: 3px solid var(--primary-colors);
+    font-weight: bold;
+    border-radius: 5em;
+    margin-top: -.2em;
+  }
+  .navbar nav li.go-premium-cta a:hover {
+    background: var(--primary-color);
+    color: white;
+  }
 }
 /*# sourceMappingURL=main.css.map */
